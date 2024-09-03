@@ -1,0 +1,95 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+.rectangle {
+  position: relative;
+  background: rgba(56, 56, 56, 0.8);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: calc(95vw);
+  margin: 0 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.rectangle h2,
+.rectangle p,
+.rectangle button {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.rectangle h2 {
+  animation-delay: 0.3s;
+}
+
+.rectangle p {
+  animation-delay: 0.6s;
+}
+
+.rectangle button {
+  animation-delay: 0.9s;
+}
+
+.rectangle img {
+  animation: rotateIn 1.2s ease-out forwards;
+  animation-delay: 1.2s;
+  transform-origin: center;
+}
+
+.parallax {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translate(-50%, -50%);
+  animation: moveParallax 15s infinite alternate ease-in-out;
+}
+
+@keyframes moveParallax {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+  50% {
+    transform: translate(-40%, -60%) scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: translate(-60%, -40%) scale(1) rotate(-10deg);
+  }
+}
